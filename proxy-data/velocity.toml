@@ -1,0 +1,88 @@
+# Config version. Do not change this
+config-version = "2.7"
+
+# What port should the proxy be bound to? By default, we'll bind to all addresses on port 25565.
+bind = "0.0.0.0:25565"
+
+# What should be the MOTD? This gets displayed when the player adds your server to their server list.
+motd = "<bold><aqua>MC-FEEXEL PARTY</aqua></bold> <white>|</white> <green>Torneo Squid Game</green>\\n<gray>¡Preparate para el desafío!"
+
+# What should we display for the maximum number of players?
+show-max-players = 100
+
+# Should we authenticate players with Mojang? By default, this is on.
+# CAMBIADO A FALSE PARA MODO NO PREMIUM
+online-mode = false
+
+# Should the proxy enforce the new public key security standard?
+force-key-authentication = false
+
+# If client's ISP/AS sent from this proxy is different from the one from Mojang's
+# authentication server, the player is kicked. This disables that check.
+prevent-client-proxy-connections = false
+
+# Declares the proxy commands to 1.13+ clients.
+announce-proxy-commands = true
+
+# Enables the logging of commands
+log-command-executions = false
+
+[servers]
+  # Configure your servers here.
+  lobby = "mc-lobby:25565"
+  squidgames = "mc-squidgames:25565"
+  minegames = "mc-minegames:25565"
+
+  # In what order we should try servers when a player logs in or is kicked from a server.
+  try = ["lobby"]
+
+[forced-hosts]
+  # No forced hosts configured
+
+[player-info-forwarding]
+  # DESHABILITADO PARA MODO NO PREMIUM
+  mode = "none"
+
+[advanced]
+  # Compression settings
+  compression-threshold = 256
+  compression-level = -1
+  
+  # Rate limiting
+  login-ratelimit = 3000
+  
+  # Timeouts
+  connection-timeout = 5000
+  read-timeout = 30000
+  
+  # Protocol settings
+  proxy-protocol = false
+  tcp-fast-open = false
+  
+  # BungeeCord compatibility
+  bungee-plugin-message-channel = true
+  
+  # Display settings
+  show-ping-requests = false
+  
+  # Failover behavior
+  failover-on-unexpected-server-disconnect = true
+  
+  # Forge support
+  announce-forge = false
+  
+  # Duplicate connections
+  kick-existing-players = false
+  
+  # HAProxy
+  send-ping-responses-to-bungee-coordinator = false
+  
+  # Transfer packet support (1.20.5+)
+  accepts-transfers = false
+
+[query]
+  # Enable query protocol
+  enabled = true
+  port = 25565
+  map = "Velocity"
+  show-plugins = false

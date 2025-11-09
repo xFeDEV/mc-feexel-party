@@ -17,12 +17,11 @@ minegames-data/
 !proxy-data/velocity.toml
 !proxy-data/forwarding.secret
 !lobby-data/config/
+!lobby-data/config/paper-global.yml
 !squidgames-data/config/
+!squidgames-data/config/paper-global.yml
 !minegames-data/config/
-
-# Pero NO versionar archivos sensibles dentro de config
-**/config/paper-global.yml
-**/config/paper-world-defaults.yml
+!minegames-data/config/paper-global.yml
 
 # ============================================
 # ARCHIVOS TEMPORALES Y LOGS
