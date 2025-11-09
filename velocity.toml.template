@@ -1,0 +1,89 @@
+# Config version. Do not change this
+config-version = "2.7"
+
+# What port should the proxy be bound to?
+bind = "0.0.0.0:25565"
+
+# MOTD (Message of the Day)
+motd = "<bold><aqua>MC-FEEXEL PARTY</aqua></bold> <white>|</white> <green>Torneo Squid Game</green>\\n<gray>¡Preparate para el desafío!"
+
+# Maximum players display
+show-max-players = 100
+
+# Authentication mode
+# true = Premium accounts only (requires Mojang authentication)
+# false = NO PREMIUM mode (accepts any client)
+online-mode = false
+
+# Public key security
+force-key-authentication = false
+
+# Proxy connection protection
+prevent-client-proxy-connections = false
+
+# Commands
+announce-proxy-commands = true
+log-command-executions = false
+
+[servers]
+  # Backend servers - use Docker service names for internal communication
+  lobby = "mc-lobby:25565"
+  squidgames = "mc-squidgames:25565"
+  minegames = "mc-minegames:25565"
+
+  # Default server order when players connect
+  try = ["lobby"]
+
+[forced-hosts]
+  # No forced hosts configured
+
+[player-info-forwarding]
+  # Forwarding mode:
+  # - "none": No forwarding (NO PREMIUM mode)
+  # - "legacy": BungeeCord forwarding
+  # - "modern": Velocity modern forwarding (requires secret)
+  mode = "none"
+
+[advanced]
+  # Network compression
+  compression-threshold = 256
+  compression-level = -1
+  
+  # Rate limiting (milliseconds)
+  login-ratelimit = 3000
+  
+  # Timeouts
+  connection-timeout = 5000
+  read-timeout = 30000
+  
+  # Protocol settings
+  proxy-protocol = false
+  tcp-fast-open = false
+  
+  # BungeeCord compatibility
+  bungee-plugin-message-channel = true
+  
+  # Display settings
+  show-ping-requests = false
+  
+  # Failover behavior
+  failover-on-unexpected-server-disconnect = true
+  
+  # Mod support
+  announce-forge = false
+  
+  # Duplicate connections
+  kick-existing-players = false
+  
+  # HAProxy support
+  send-ping-responses-to-bungee-coordinator = false
+  
+  # Transfer packet support (Minecraft 1.20.5+)
+  accepts-transfers = false
+
+[query]
+  # Enable GameSpy 4 query protocol
+  enabled = true
+  port = 25565
+  map = "Velocity"
+  show-plugins = false

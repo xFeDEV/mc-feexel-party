@@ -1,0 +1,167 @@
+# ============================================
+# MC-FEEXEL-PARTY - GitIgnore
+# Red de Minecraft con Velocity + Paper
+# ============================================
+
+# ============================================
+# DATOS DE LOS SERVIDORES (NO VERSIONAR)
+# ============================================
+
+# Carpetas de datos de servidores
+proxy-data/
+lobby-data/
+squidgames-data/
+minegames-data/
+
+# Excepción: SÍ versionar archivos de configuración importantes
+!proxy-data/velocity.toml
+!proxy-data/forwarding.secret
+!lobby-data/config/
+!squidgames-data/config/
+!minegames-data/config/
+
+# Pero NO versionar archivos sensibles dentro de config
+**/config/paper-global.yml
+**/config/paper-world-defaults.yml
+
+# ============================================
+# ARCHIVOS TEMPORALES Y LOGS
+# ============================================
+
+# Logs de servidores
+logs/
+*.log
+*.log.*
+
+# Archivos de cache
+cache/
+.cache/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ============================================
+# MINECRAFT - ARCHIVOS GENERADOS
+# ============================================
+
+# Mundos (muy pesados, no versionarlos)
+world/
+world_nether/
+world_the_end/
+**/world/
+**/world_nether/
+**/world_the_end/
+
+# JARs descargados (se descargan automáticamente)
+*.jar
+!plugins/*.jar
+
+# Carpetas de plugins (excepto configs personalizados)
+plugins/
+libraries/
+versions/
+
+# Archivos de usuario
+banned-ips.json
+banned-players.json
+ops.json
+whitelist.json
+usercache.json
+usernamecache.json
+
+# Archivos de servidor generados
+server.properties
+bukkit.yml
+spigot.yml
+commands.yml
+help.yml
+permissions.yml
+eula.txt
+
+# ============================================
+# DOCKER
+# ============================================
+
+# Variables de entorno sensibles
+.env
+.env.local
+.env.*.local
+
+# Archivos de Docker generados
+.docker/
+.dockerignore
+
+# ============================================
+# SISTEMA OPERATIVO
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ============================================
+# EDITORES E IDEs
+# ============================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# ============================================
+# BACKUP Y RECOVERY
+# ============================================
+
+# Archivos de respaldo
+*.bak
+*.backup
+*.old
+backup/
+backups/
+
+# ============================================
+# ARCHIVOS QUE SÍ QUEREMOS VERSIONAR
+# ============================================
+
+# Forzar inclusión de archivos importantes
+!docker-compose.yml
+!.gitignore
+!README.md
+!LICENSE
+
+# Configuraciones esenciales (crear versiones template)
+!velocity.toml.template
+!paper-global.yml.template
