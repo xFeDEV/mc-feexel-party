@@ -14,7 +14,7 @@ services:
       EULA: "TRUE"
       TYPE: "VELOCITY"
       ONLINE_MODE: "FALSE"
-      MEMORY: "1G"
+      MEMORY: "512M"
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -34,58 +34,59 @@ services:
       TYPE: "PAPER"
       VERSION: "1.21"
       ONLINE_MODE: "FALSE"
-      MEMORY: "4G"
+      MEMORY: "2G"
       USE_AIKAR_FLAGS: "TRUE"
       RCON_ENABLED: "TRUE"
       RCON_PASSWORD: "lobby_rcon_pass"
+      ALLOW_NETHER: "FALSE"
     tty: true
     stdin_open: true
     restart: unless-stopped
 
   # ============================================
   # SQUIDGAMES - Ronda 1 (Green Light / Red Light)
-  # Estrategia Secuencial: 10G RAM cuando esté activo
+  # Estrategia Secuencial: 5G RAM cuando esté activo
   # ============================================
-  squidgames:
-    image: itzg/minecraft-server:latest
-    container_name: mc-squidgames
-    ports:
-      - "25567:25565"
-    volumes:
-      - ./squidgames-data:/data
-    environment:
-      EULA: "TRUE"
-      TYPE: "PAPER"
-      VERSION: "1.21"
-      ONLINE_MODE: "FALSE"
-      MEMORY: "10G"
-      USE_AIKAR_FLAGS: "TRUE"
-      RCON_ENABLED: "TRUE"
-      RCON_PASSWORD: "squid_rcon_pass"
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
+  # squidgames:
+  #   image: itzg/minecraft-server:latest
+  #   container_name: mc-squidgames
+  #   ports:
+  #     - "25567:25565"
+  #   volumes:
+  #     - ./squidgames-data:/data
+  #   environment:
+  #     EULA: "TRUE"
+  #     TYPE: "PAPER"
+  #     VERSION: "1.21"
+  #     ONLINE_MODE: "FALSE"
+  #     MEMORY: "5G"
+  #     USE_AIKAR_FLAGS: "TRUE"
+  #     RCON_ENABLED: "TRUE"
+  #     RCON_PASSWORD: "squid_rcon_pass"
+  #   tty: true
+  #   stdin_open: true
+  #   restart: unless-stopped
 
   # ============================================
   # MINEGAMES - Ronda 2 y siguientes
-  # Estrategia Secuencial: 10G RAM cuando esté activo
+  # Estrategia Secuencial: 5G RAM cuando esté activo
   # ============================================
-  minegames:
-    image: itzg/minecraft-server:latest
-    container_name: mc-minegames
-    ports:
-      - "25568:25565"
-    volumes:
-      - ./minegames-data:/data
-    environment:
-      EULA: "TRUE"
-      TYPE: "PAPER"
-      VERSION: "1.21"
-      ONLINE_MODE: "FALSE"
-      MEMORY: "10G"
-      USE_AIKAR_FLAGS: "TRUE"
-      RCON_ENABLED: "TRUE"
-      RCON_PASSWORD: "minegames_rcon_pass"
-    tty: true
-    stdin_open: true
-    restart: unless-stopped
+  # minegames:
+  #   image: itzg/minecraft-server:latest
+  #   container_name: mc-minegames
+  #   ports:
+  #     - "25568:25565"
+  #   volumes:
+  #     - ./minegames-data:/data
+  #   environment:
+  #     EULA: "TRUE"
+  #     TYPE: "PAPER"
+  #     VERSION: "1.21"
+  #     ONLINE_MODE: "FALSE"
+  #     MEMORY: "5G"
+  #     USE_AIKAR_FLAGS: "TRUE"
+  #     RCON_ENABLED: "TRUE"
+  #     RCON_PASSWORD: "minegames_rcon_pass"
+  #   tty: true
+  #   stdin_open: true
+  #   restart: unless-stopped
